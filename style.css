@@ -1,0 +1,538 @@
+/* VARIABLES */
+:root {
+    /* Fonts */
+    --main-type: "Averia Serif Libre", serif;
+    --secondary-type: "Kaushan Script", cursive;
+
+    /* Colors */
+    --main-color: #190036;
+    --accent-color: #e4c201;
+    --accent-color-2: #b40202;
+    --accent-color-3: #03b7cf;
+    --accent-color-4: #01b11e;
+}
+
+/* GLOBAL STYLES */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* LAYOUT UTILITIES */
+.flex {
+    display: flex;
+}
+
+/* BUTTON STYLES */
+.btn-primary {
+    padding: 1rem 3rem;
+    margin: 1rem 0;
+    font-family: var(--main-type);
+    border-radius: 3rem;
+    text-decoration: none;
+    font-weight: 700;
+    width: max-content;
+    position: relative;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.btn-primary::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    z-index: -1;
+    transition: all 0.25s ease;
+}
+
+.btn-primary:hover {
+    background-color: transparent;
+    color: var(--accent-color);
+}
+
+.btn-primary:hover::before {
+    transform: translateX(0);
+}
+
+.btn-yellow {
+    background-color: var(--accent-color);
+    color: var(--main-color);
+}
+
+.btn-red {
+    background-color: var(--accent-color-2);
+    color: white;
+}
+
+.btn-red:hover {
+    color: var(--accent-color-2);
+}
+
+.btn-blue {
+    background-color: var(--accent-color-3);
+    color: var(--main-color);
+}
+
+.btn-blue:hover {
+    color: var(--accent-color-3);
+}
+
+.btn-green {
+    background-color: var(--accent-color-4);
+    color: var(--main-color);
+}
+
+.btn-green:hover {
+    color: var(--accent-color-4);
+}
+
+/* TEXT STYLES */
+.accent-yellow {
+    color: var(--accent-color);
+}
+
+.accent-red {
+    color: var(--accent-color-2);
+}
+
+.accent-blue {
+    color: var(--accent-color-3);
+}
+
+.accent-green {
+    color: var(--accent-color-4);
+}
+
+.accent-font {
+    font-family: var(--secondary-type);
+}
+
+/* HTML */
+html {
+    scroll-behavior: smooth;
+}
+
+/* BODY STYLES */
+body {
+    background-color: var(--main-color);
+    color: white;
+    font-family: var(--main-type);
+    position: relative;
+    overflow-y: hidden;
+}
+
+main {
+    height: 100vh;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+}
+
+section {
+    scroll-snap-align: start;
+}
+
+/* NAVBAR */
+.header {
+    width: 100%;
+    max-width: 100vw;
+    height: max-content;
+}
+
+.navUl {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    max-width: 100vw;
+    padding: 2rem;
+}
+
+#logo {
+    width: 120px;
+    filter: drop-shadow(0px 5px 7px rgba(0, 0, 0, 2));
+}
+
+/* SECTION STYLES */
+#section1,
+#section2,
+#section3,
+#section4 {
+    max-height: 100vh;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.sectionLeft,
+.sectionRight {
+    width: 50%;
+    height: 100%;
+}
+
+.sectionRight {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.sectionRight .sectionWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+    height: 50%;
+    width: 50%;
+}
+
+.sectionWrapper .heading {
+    font-size: 4.8rem;
+    position: relative;
+    line-height: 7rem;
+    letter-spacing: 0.3rem;
+    width: 100%;
+}
+
+.accent {
+    font-family: var(--secondary-type);
+    position: absolute;
+    top: 3.5rem;
+    left: 3rem;
+}
+
+.content {
+    font-size: 1.5rem;
+    line-height: 1.75rem;
+    letter-spacing: 0.2rem;
+}
+
+.bgImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 45%;
+}
+
+/* MIDDLE IMAGE */
+.middleImgContainer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 200px;
+    height: auto;
+}
+
+.beerBottle {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 1));
+    animation: beerBob 5s linear infinite;
+}
+
+/* IMAGE WRAPPER */
+.imgWrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.peopleOnBeachVideo,
+.burgerAndBeerBg {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.peopleOnBeach,
+.burgerAndBeer {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+/* FOOTER */
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    padding: 2rem;
+}
+
+.footerUl {
+    display: flex;
+    width: 10%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footerSocial {
+    width: 40px;
+    transition: all 0.15s ease;
+}
+
+.footerSocial:hover {
+    transform: scale(1.2);
+}
+
+/* RESPONSIVE STYLES */
+@media only screen and (max-width: 1230px) {
+    /* SECTION STYLES */
+    .sectionRight .sectionWrapper {
+        height: 40%;
+    }
+
+    .sectionWrapper .heading {
+        font-size: 3rem;
+        position: relative;
+        line-height: 4.5rem;
+    }
+    
+    .accent {
+        top: 2rem;
+        left: 2rem;
+    }
+    
+    .content {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    
+    /* MIDDLE IMAGE */
+    .middleImgContainer {
+        width: 15%;
+    }
+
+    /* IMAGE WRAPPER */
+    .imgWrapper {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .peopleOnBeachVideo,
+    .burgerAndBeerBg {
+        width: 100%;
+        object-fit: cover;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    .peopleOnBeach,
+    .burgerAndBeer {
+        height: auto;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 700px;
+    }
+
+    /* FOOTER */
+    .footerUl {
+        display: flex;
+        width: 20%;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+@media only screen and (max-width: 920px) {
+    /* SECTION STYLES */
+    #section1,
+    #section2,
+    #section3,
+    #section4 {
+        flex-direction: column;
+    }
+
+    .sectionLeft,
+    .sectionRight {
+        width: 100%;
+        height: 50%;
+    }
+
+    .sectionRight {
+        padding: 1rem 4rem;
+        align-items: flex-start;
+    }
+
+    .sectionRight .sectionWrapper {
+        height: 90%;
+        width: 50%;
+    }
+    
+    .sectionWrapper .heading {
+        font-size: 4.8rem;
+        position: relative;
+        line-height: 7rem;
+        letter-spacing: 0.3rem;
+        width: 100%;
+    }
+    
+    .accent {
+        font-family: var(--secondary-type);
+        position: absolute;
+        top: 3.5rem;
+        left: 3rem;
+    }
+    
+    .content {
+        font-size: 1.3rem;
+        line-height: 1.75rem;
+        letter-spacing: 0.2rem;
+    }
+
+    /* MIDDLE IMAGE */
+    .middleImgContainer {
+        position: absolute;
+        top: 70%;
+        left: 70%;
+        width: 150px;
+        height: auto;
+    }
+
+    .peopleOnBeach,
+    .burgerAndBeer {
+        height: auto;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: -100px;
+    }
+
+    .bgImg {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 45%;
+    }
+
+    .footer {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 835px) {
+    /* NAVBAR */
+    .navUl {
+        padding: 1rem;
+    }
+    
+    #logo {
+        width: 75px;
+        filter: drop-shadow(0px 5px 7px rgba(0, 0, 0, 2));
+    }
+
+    .btn-primary {
+        margin: 0;
+    }
+
+    /* BG IMAGES */
+    .peopleOnBeach,
+    .burgerAndBeer {
+        top: 0;
+    }
+}
+
+@media only screen and (max-width: 660px) {
+    /* SECTION */
+    .sectionRight {
+        padding: 0 2rem;
+        justify-content: start;
+    }
+
+    .sectionRight .sectionWrapper {
+        width: 100%;
+        height: 70%;
+    }
+
+    .sectionWrapper .heading {
+        font-size: 2.75rem;
+        position: relative;
+        line-height: 4.5rem;
+        letter-spacing: 0.3rem;
+        width: min-content;
+    }
+    
+    .accent {
+        font-family: var(--secondary-type);
+        position: absolute;
+        top: 2rem;
+        left: 2rem;
+    }
+    
+    .content {
+        font-size: 0.8rem;
+        line-height: 1rem;
+        letter-spacing: 0.2rem;
+        margin: 0 0 1rem 0;
+    }
+
+    /* MIDDLE IMAGE */
+    .middleImgContainer {
+        position: absolute;
+        top: 50%;
+        left: 80%;
+        width: 75px;
+        height: auto;
+    }
+
+    /* BG IMAGES */
+    .burgerAndBeer {
+        top: 250px;
+    }
+
+    .peopleOnBeach {
+        top: 275px;
+    }
+}
+
+/* ANIMATIONS */
+@keyframes beerBob {
+    0%, 50%, 100% {
+        transform: translateY(0);
+    }
+
+    25% {
+        transform: translateY(-1.2%);
+    }
+
+    75% {
+        transform: translateY(1.2%);
+    }
+}
