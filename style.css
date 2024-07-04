@@ -359,7 +359,7 @@ section {
         width: 100%;
         position: absolute;
         left: 0;
-        top: 700px;
+        bottom: 0;
     }
 
     /* FOOTER */
@@ -432,7 +432,7 @@ section {
         width: 100%;
         position: absolute;
         left: 0;
-        top: -100px;
+        bottom: -120px;
     }
 
     .bgImg {
@@ -458,6 +458,27 @@ section {
         filter: drop-shadow(0px 5px 7px rgba(0, 0, 0, 2));
     }
 
+    .sectionWrapper .heading {
+        font-size: 3rem;
+        position: relative;
+        line-height: 4.5rem;
+        letter-spacing: 0.3rem;
+        width: 100%;
+    }
+    
+    .accent {
+        font-family: var(--secondary-type);
+        position: absolute;
+        top: 2.2rem;
+        left: 3rem;
+    }
+    
+    .content {
+        font-size: 1rem;
+        line-height: 1.75rem;
+        letter-spacing: 0.2rem;
+    }
+
     .btn-primary {
         margin: 0;
     }
@@ -465,7 +486,7 @@ section {
     /* BG IMAGES */
     .peopleOnBeach,
     .burgerAndBeer {
-        top: 0;
+        bottom: -120px;
     }
 }
 
@@ -514,11 +535,11 @@ section {
 
     /* BG IMAGES */
     .burgerAndBeer {
-        top: 250px;
+        bottom: 0;
     }
 
     .peopleOnBeach {
-        top: 275px;
+        bottom: 0;
     }
 }
 
